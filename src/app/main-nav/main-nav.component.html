@@ -1,34 +1,36 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
-               [opened]="!(isHandset$ | async)"
-               class="sidenav"
-               fixedInViewport="true">
-    <mat-toolbar></mat-toolbar>
-    <mat-nav-list>
-      <a href="/" mat-list-item>
-        <mat-icon>home</mat-icon>&emsp;Inicio</a>
-      <a href="/searchartist" mat-list-item>
-        <mat-icon>search</mat-icon>&emsp;Buscar Artista</a>
-      <a href="/topartists" mat-list-item>
-        <mat-icon>star_rate</mat-icon>&emsp;Top Artistas</a>
-      <a href="/searchtrack" mat-list-item>
-        <mat-icon>search</mat-icon>&emsp;Buscar Tracks</a>
-      <a href="/toptracks" mat-list-item>
-        <mat-icon>star_rate</mat-icon>&emsp;Top Tracks</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        type="button">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>musicSearch</span>
-    </mat-toolbar>
-    <!-- Add Content Here -->
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<div>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+                 [mode]="(isHandset$ | async) ? 'over' : 'side'"
+                 [opened]="!(isHandset$ | async)"
+                 class="sidenav"
+                 fixedInViewport="true">
+      <mat-toolbar></mat-toolbar>
+      <mat-nav-list>
+        <a href="/" mat-list-item>
+          <mat-icon>home</mat-icon>&emsp;Inicio</a>
+        <a href="/searchartist" mat-list-item>
+          <mat-icon>search</mat-icon>&emsp;Buscar Artista</a>
+        <a href="/topartists" mat-list-item>
+          <mat-icon>star_rate</mat-icon>&emsp;Top Artistas</a>
+        <a href="/searchtrack" mat-list-item>
+          <mat-icon>search</mat-icon>&emsp;Buscar Tracks</a>
+        <a href="/toptracks" mat-list-item>
+          <mat-icon>star_rate</mat-icon>&emsp;Top Tracks</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          type="button">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>musicSearch</span>
+      </mat-toolbar>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
