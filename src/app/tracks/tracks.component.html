@@ -1,0 +1,28 @@
+<div class="main-div">
+  <br/>
+  <h2 class="txt">TRACKS</h2>
+  <h3 class="txt">{{artist_name}}: {{album_name}}</h3>
+  <mat-icon>audiotrack</mat-icon>
+  <br/><br/>
+  <mat-list *ngFor="let track of tracks;let indice=index">
+    <mat-list-item><h3>{{track.track.track_name}}</h3></mat-list-item>
+    <mat-list-item *ngIf="track.track.primary_genres.music_genre_list[0]">
+      {{track.track.primary_genres.music_genre_list[0].music_genre.music_genre_name}}
+    </mat-list-item>
+    <mat-accordion (click)="getLyrics(track.track.track_id, indice)">
+      <mat-expansion-panel class="expansion_panel">
+        <mat-expansion-panel-header class="center-aligned-header">
+          <mat-panel-title>
+            <mat-icon>notes</mat-icon>&ensp;Letra
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <img *ngIf="track.explicit" alt="Explicit Content" src="assets/explicit_content.png">
+        <pre>{{track.lyrics}}</pre>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-divider></mat-divider>
+  </mat-list>
+</div>
+<br/><br/>
+
+

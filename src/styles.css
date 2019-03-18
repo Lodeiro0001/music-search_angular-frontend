@@ -1,0 +1,59 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+body {
+  background-image: url("/assets/bg.jpg");
+  margin: 0;
+}
+
+pre {
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+  font-family: Raleway, sans-serif !important;
+}
+
+.main-div {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+}
+
+.mat-list .mat-list-item .mat-list-item-content {
+  justify-content: center;
+}
+
+.center-aligned-header > .mat-content {
+  justify-content: center;
+}
+
+.mat-content > mat-panel-title, .mat-content > mat-panel-description {
+  flex: 0 0 auto;
+}
+
+.search-full-width {
+  min-width: 150px;
+  max-width: 350px;
+  width: 60%;
+}
+
+.center {
+  text-align: center
+}
+
+.txt {
+  font-family: Raleway, sans-serif !important;
+}
+
+.sidenav {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.expansion_panel {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+
+

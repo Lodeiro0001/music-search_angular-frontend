@@ -1,0 +1,31 @@
+<div class="main-div">
+  <br/>
+  <h2 class="txt">BUSCAR ARTISTA</h2>
+  <mat-icon>search</mat-icon>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field class="search-full-width">
+      <input [(ngModel)]="name" matInput name="name" placeholder="Nombre">
+    </mat-form-field>
+    <br/><br/>
+    <button color="primary" mat-raised-button type="submit">Buscar</button>
+  </form>
+  <br><br>
+  <mat-divider></mat-divider>
+  <mat-list *ngFor="let artist of artists">
+    <mat-list-item><h3>{{artist.artist.artist_name}}</h3></mat-list-item>
+    <mat-list-item *ngIf="artist.artist.artist_country"><h5>{{artist.artist.artist_country | countries}}</h5>
+    </mat-list-item>
+    <mat-list-item *ngIf="artist.artist.artist_twitter_url"><h5>Twitter: <a href="{{artist.artist.artist_twitter_url}}"
+                                                                            target="_blank">{{artist.artist.artist_twitter_url}}</a>
+    </h5></mat-list-item>
+    <mat-list-item *ngIf="artist.artist.artist_alias_list[0]"><h5>Alias:
+      {{artist.artist.artist_alias_list[0].artist_alias}}</h5></mat-list-item>
+    <button [routerLink]="['../albums', artist.artist.artist_id]" class="nav-item nav-link-edit" color="primary"
+            mat-raised-button>Ver albums
+    </button>
+    <br><br>
+    <mat-divider></mat-divider>
+  </mat-list>
+</div>
+<br/><br/>
+

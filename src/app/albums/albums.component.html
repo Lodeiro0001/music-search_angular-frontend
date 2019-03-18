@@ -1,0 +1,23 @@
+<div class="main-div">
+  <br>
+  <h2 class="txt">ALBUMS</h2>
+  <h3 class="txt">{{artist_name}}</h3>
+  <mat-icon>album</mat-icon>
+  <br/><br/>
+  <mat-list *ngFor="let album of albums">
+    <mat-list-item><h3>{{album.album.album_name}}</h3></mat-list-item>
+    <mat-list-item *ngIf="album.album.primary_genres.music_genre_list[0]"><h5>Género:&ensp;</h5>
+      {{album.album.primary_genres.music_genre_list[0].music_genre.music_genre_name}}
+    </mat-list-item>
+    <mat-list-item *ngIf="album.album.album_release_date"><h5>Fecha de lanzamiento:&ensp;</h5>
+      {{album.album.album_release_date}}
+    </mat-list-item>
+    <mat-list-item *ngIf="album.album.album_pline"><h5>Sello:&ensp;</h5>{{album.album.album_pline}}</mat-list-item>
+    <button [routerLink]="['../../albumtracks', album.album.album_id]" class="nav-item nav-link-edit" color="primary"
+            mat-raised-button>Ver tracks
+    </button>
+    <br><br>
+    <mat-divider></mat-divider>
+  </mat-list>
+</div>
+<br/><br/>

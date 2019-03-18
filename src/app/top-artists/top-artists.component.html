@@ -1,0 +1,15 @@
+<div class="main-div">
+  <br/>
+  <h2>TOP <mat-icon>looks_5</mat-icon> ARTISTAS</h2>
+  <br/><br/>
+  <mat-list *ngFor="let artist of artists;let indice=index">
+    <mat-list-item><h3>{{indice+1}} <mat-icon>star</mat-icon> {{artist.artist_name}}</h3></mat-list-item>
+    <button [routerLink]="['../albums', artist.artist_id]" class="nav-item nav-link-edit" color="primary"
+            mat-raised-button>Ver albums
+    </button>
+    <br><br>
+    <mat-divider></mat-divider>
+  </mat-list>
+</div>
+<br/><br/>
+

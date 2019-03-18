@@ -1,0 +1,30 @@
+<div class="main-div">
+  <br/>
+  <h2 class="txt">BUSCAR TRACK</h2>
+  <mat-icon>search</mat-icon>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field class="search-full-width">
+      <input [(ngModel)]="title" matInput name="title" placeholder="Titulo, artista y/o letra">
+    </mat-form-field>
+    <br/><br/>
+    <button color="primary" mat-raised-button type="submit">Buscar</button>
+  </form>
+  <br><br>
+  <mat-divider></mat-divider>
+  <mat-list *ngFor="let track of tracks;let indice=index">
+    <mat-list-item><h3>{{track.track.track_name}}</h3></mat-list-item>
+    <mat-list-item *ngIf="track.track.artist_name"><h5>Artista:&ensp;</h5>{{track.track.artist_name}}</mat-list-item>
+    <mat-list-item *ngIf="track.track.album_name"><h5>Album:&ensp;</h5>{{track.track.album_name}}</mat-list-item>
+    <mat-accordion (click)="getLyrics(track.track.track_id, indice)">
+      <mat-expansion-panel class="expansion_panel">
+        <mat-expansion-panel-header class="center-aligned-header">
+          <mat-panel-title>Letra</mat-panel-title>
+        </mat-expansion-panel-header>
+        <img *ngIf="track.explicit" alt="Explicit Content" src="assets/explicit_content.png">
+        <pre>{{track.lyrics}}</pre>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <mat-divider></mat-divider>
+  </mat-list>
+</div>
+<br/><br/>
