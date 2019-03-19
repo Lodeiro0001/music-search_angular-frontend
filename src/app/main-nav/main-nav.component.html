@@ -1,6 +1,6 @@
 <div>
   <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    <mat-sidenav class="sidenav-fix" #drawer [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                  [mode]="(isHandset$ | async) ? 'over' : 'side'"
                  [opened]="!(isHandset$ | async)"
                  class="sidenav"
@@ -14,7 +14,7 @@
         <a href="/topartists" mat-list-item>
           <mat-icon>star_rate</mat-icon>&emsp;Top Artistas</a>
         <a href="/searchtrack" mat-list-item>
-          <mat-icon>search</mat-icon>&emsp;Buscar Tracks</a>
+          <mat-icon>search</mat-icon>&emsp;Buscar Track</a>
         <a href="/toptracks" mat-list-item>
           <mat-icon>star_rate</mat-icon>&emsp;Top Tracks</a>
       </mat-nav-list>
